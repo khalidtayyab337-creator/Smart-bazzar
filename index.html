@@ -37,105 +37,100 @@ header p {
 .hero {
   background: white;
   text-align: center;
-  padding: 45px 20px;
+  padding: 40px 20px;
 }
 
 .hero h2 {
-  font-size: 32px;
-  margin-bottom: 12px;
+  font-size: 30px;
+  margin-bottom: 10px;
 }
 
 .hero p {
-  font-size: 17px;
   color: #666;
   margin-bottom: 20px;
+}
+
+.product {
+  max-width: 900px;
+  margin: 30px auto;
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+.main-image {
+  width: 100%;
+  max-height: 500px;
+  object-fit: contain;
+  border-radius: 12px;
+  background: #f8f8f8;
+}
+
+.thumbnails {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+  overflow-x: auto;
+}
+
+.thumbnails img {
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 2px solid transparent;
+}
+
+.thumbnails img:hover {
+  border-color: #16a34a;
+}
+
+.product-info {
+  text-align: center;
+  padding: 25px 10px;
+}
+
+.product-info h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.price {
+  font-size: 25px;
+  font-weight: bold;
+  color: #16a34a;
+  margin-bottom: 15px;
+}
+
+.description {
+  color: #666;
+  margin-bottom: 20px;
+  line-height: 1.6;
 }
 
 .btn {
   display: inline-block;
   background: #16a34a;
   color: white;
-  padding: 13px 24px;
+  padding: 14px 28px;
   border-radius: 8px;
   text-decoration: none;
   font-weight: bold;
+  font-size: 17px;
 }
 
-.products {
-  padding: 30px 20px;
-  max-width: 1100px;
-  margin: auto;
-}
-
-.products h2 {
-  text-align: center;
-  margin-bottom: 25px;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
-}
-
-.card {
-  background: white;
-  border-radius: 12px;
-  padding: 18px;
-  text-align: center;
-  box-shadow: 0 3px 12px rgba(0,0,0,0.08);
-}
-
-.card .image {
-  height: 170px;
-  background: #eee;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 55px;
-  margin-bottom: 15px;
-}
-
-.card h3 {
-  margin-bottom: 8px;
-}
-
-.price {
-  font-size: 20px;
-  font-weight: bold;
-  margin-bottom: 15px;
-}
-
-.order {
-  display: inline-block;
-  background: #25D366;
-  color: white;
-  padding: 10px 18px;
-  border-radius: 7px;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.about {
-  background: white;
-  padding: 35px 20px;
-  text-align: center;
-  margin-top: 20px;
+.btn:hover {
+  background: #12823a;
 }
 
 footer {
   background: #111;
-  color: white;
+  color: #ccc;
   text-align: center;
   padding: 20px;
-  margin-top: 20px;
-}
-
-@media(max-width:500px) {
-  .hero h2 {
-    font-size: 26px;
-  }
+  margin-top: 40px;
 }
 </style>
 </head>
@@ -144,70 +139,78 @@ footer {
 
 <header>
   <h1>Smart Bazaar</h1>
-  <p>Quality Products at Affordable Prices</p>
+  <p>Quality Products at Best Prices</p>
 </header>
 
 <section class="hero">
   <h2>Welcome to Smart Bazaar</h2>
-  <p>Shop your favorite products easily and order directly on WhatsApp.</p>
-  <a class="btn" href="#products">Shop Now</a>
+  <p>Order your favorite product easily through WhatsApp.</p>
 </section>
 
-<section class="products" id="products">
-  <h2>Our Products</h2>
+<section class="product">
 
-  <div class="grid">
+  <img
+    id="mainImage"
+    class="main-image"
+    src="1787418902922.jpg"
+    alt="Smart Bazaar Product"
+  >
 
-    <div class="card">
-      <div class="image">⌚</div>
-      <h3>Smart Watch</h3>
-      <div class="price">Rs. 1,999</div>
-      <a class="order" href="https://wa.me/923204117521?text=I%20want%20to%20order%20Smart%20Watch" target="_blank">
-        Order on WhatsApp
-      </a>
-    </div>
+  <div class="thumbnails">
 
-    <div class="card">
-      <div class="image">👜</div>
-      <h3>Ladies Handbag</h3>
-      <div class="price">Rs. 2,499</div>
-      <a class="order" href="https://wa.me/923204117521?text=I%20want%20to%20order%20Ladies%20Handbag" target="_blank">
-        Order on WhatsApp
-      </a>
-    </div>
+    <img src="1787418902922.jpg"
+         onclick="changeImage(this.src)"
+         alt="Product Image 1">
 
-    <div class="card">
-      <div class="image">💎</div>
-      <h3>Fashion Bracelet</h3>
-      <div class="price">Rs. 799</div>
-      <a class="order" href="https://wa.me/923204117521?text=I%20want%20to%20order%20Fashion%20Bracelet" target="_blank">
-        Order on WhatsApp
-      </a>
-    </div>
+    <img src="1787418903473.jpg"
+         onclick="changeImage(this.src)"
+         alt="Product Image 2">
 
-    <div class="card">
-      <div class="image">👕</div>
-      <h3>Fashion Clothes</h3>
-      <div class="price">Rs. 1,499</div>
-      <a class="order" href="https://wa.me/923204117521?text=I%20want%20to%20order%20Fashion%20Clothes" target="_blank">
-        Order on WhatsApp
-      </a>
-    </div>
+    <img src="1787418903771.jpg"
+         onclick="changeImage(this.src)"
+         alt="Product Image 3">
+
+    <img src="1787418904084.jpg"
+         onclick="changeImage(this.src)"
+         alt="Product Image 4">
+
+    <img src="1787418904504.jpg"
+         onclick="changeImage(this.src)"
+         alt="Product Image 5">
 
   </div>
-</section>
 
-<section class="about">
-  <h2>About Smart Bazaar</h2>
-  <p>
-    Smart Bazaar brings useful and stylish products at reasonable prices.
-    Order easily through WhatsApp.
-  </p>
+  <div class="product-info">
+    <h2>Premium Product</h2>
+
+    <div class="price">
+      Contact for Price
+    </div>
+
+    <p class="description">
+      High quality product available at Smart Bazaar.
+      For price and order details, contact us directly on WhatsApp.
+    </p>
+
+    <a
+      class="btn"
+      href="https://wa.me/923204117521?text=Assalam-o-Alaikum%2C%20I%20want%20to%20order%20this%20product%20from%20Smart%20Bazaar."
+      target="_blank">
+      Order on WhatsApp
+    </a>
+  </div>
+
 </section>
 
 <footer>
   <p>© 2026 Smart Bazaar. All Rights Reserved.</p>
 </footer>
+
+<script>
+function changeImage(imageSource) {
+  document.getElementById("mainImage").src = imageSource;
+}
+</script>
 
 </body>
 </html>
